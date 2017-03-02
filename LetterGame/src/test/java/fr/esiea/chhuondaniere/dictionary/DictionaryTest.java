@@ -1,9 +1,9 @@
-package fr.esiea.unique.binome.name.dictionary;
+package fr.esiea.chhuondaniere.dictionary;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import fr.esiea.chhuondaniere.dictionary.IDictionary;
+import fr.esiea.chhuondaniere.dictionary.Dictionnaire;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -13,16 +13,16 @@ import static org.junit.Assert.assertTrue;
  */
 public class DictionaryTest {
 
-    private IDictionary dictionary;
+    private Dictionnaire dictionary;
 
     @Before
     public void setup() {
-        //TODO
+        dictionary= new Dictionnaire();
     }
 
     @Test
     public void testIsWord() {
-        assertTrue(dictionary.isWord("maman"));
-        assertFalse(dictionary.isWord("namam"));
+        assertTrue(dictionary.isWordValid("maman"));
+        assertFalse(dictionary.isWordValid("namam"));
     }
 }

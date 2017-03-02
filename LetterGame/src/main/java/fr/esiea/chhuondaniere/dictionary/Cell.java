@@ -3,7 +3,7 @@ package fr.esiea.chhuondaniere.dictionary;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-
+// Classe représentant les feuilles de l'arbre dictionnaire
 public class Cell {
 	
 	private char letter ;

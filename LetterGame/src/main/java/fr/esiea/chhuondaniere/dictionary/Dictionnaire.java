@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Optional;
 import java.util.Scanner;
+// Classe dictionnaire (qui sera sous forme d'arbre)
 
 public class Dictionnaire {
 	private Cell origin = new Cell('0');

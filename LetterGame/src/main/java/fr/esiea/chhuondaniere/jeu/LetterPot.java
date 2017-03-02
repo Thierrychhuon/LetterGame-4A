@@ -3,9 +3,11 @@ package fr.esiea.chhuondaniere.jeu;
 import java.util.ArrayList;
 import java.util.Collections;
 
+// Classe représentant le pot contenant les lettres de l'alphabet 
+
 public class LetterPot {
 	private ArrayList<Character> letterList;
-	
+
 	public LetterPot(){
 		String sample = new String("azertyuiopqsdfghjklmwxcvbn");
 	       this.letterList = new ArrayList<Character>();
