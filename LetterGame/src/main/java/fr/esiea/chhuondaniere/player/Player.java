@@ -21,6 +21,10 @@ public class Player {
 		this.wordlist.add(word);
 	}
 	
+	public void removeWordToPlayer(String word){
+		this.wordlist.remove(word);
+	}
+	
 	public String getName() {
 		return name;
 	}

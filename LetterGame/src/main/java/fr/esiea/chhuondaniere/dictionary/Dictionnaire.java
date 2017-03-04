@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Dictionnaire {
 	private Cell origin = new Cell('0');
 	
-	public Dictionnaire(){
+	public Dictionnaire(){ //Créer un dictionnaire. Il prendra automatique le fichier txt dico.txt
 		try{
 			File file = new File( "src/main/resources/dico.txt");
 			@SuppressWarnings("resource")
@@ -18,14 +18,14 @@ public class Dictionnaire {
 			while (scanner.hasNextLine()) {
 					String next = scanner.nextLine();
 					this.addWord(next);
-					System.out.println(next);
+					//System.out.println(next);
 			}
 		}catch(FileNotFoundException e){
 			System.out.println("File not found");
 		}
 	}
 	
-	public void addWord(String w){
+	public void addWord(String w){ //Ajoute un mot à l'arbre 
 		Cell currentCell= origin ;
 		for(char currentLetter : w.toCharArray()){
 			currentCell = currentCell.getOrCreate(currentLetter);
@@ -33,7 +33,7 @@ public class Dictionnaire {
 		currentCell.getOrCreate(Cell.EOW);
 	}
 	
-	public boolean isWordValid(String w){
+	public boolean isWordValid(String w){ // Vérifie qu'un mot existe dans le dictionnaire
 		w=w.toLowerCase();
 		Cell currentCell = origin;
 		for (char currentLetter:w.toCharArray()) {

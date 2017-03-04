@@ -29,9 +29,19 @@ public class CommonPot {
 	}
 	
 	public void removeLetter(char e){ // Retire une lettre du pot commun
-		this.letterList.remove(e);
+		this.letterList.remove(Character.valueOf(e));
 	}
 	
+	public void removeLetters(String word){ // Retire plusieurs lettres du pot commun
+		for(char currentLetter: word.toCharArray()){
+			this.letterList.remove(Character.valueOf(currentLetter));
+		}
+	}
+	
+	public void setLetterList(ArrayList<Character> letterList) {
+		this.letterList = letterList;
+	}
+
 	public boolean isPotContains(String word){ // Vérifie si le mot en argument peut être créer avec les lettres
 		/*char tab[]=null;                     // du pot commun
 		for(int i=0;i<this.letterList.size();i++){
@@ -40,12 +50,10 @@ public class CommonPot {
 		ArrayList<Character> list = new ArrayList<Character>(this.letterList);
 		for (char currentLetter: word.toCharArray()){
 			if(!list.contains(currentLetter)){
-				System.out.print("Pas trouvé "+currentLetter+"\n");
 				return false;
 			}
 			list.remove(Character.valueOf(currentLetter));
 		}
-		System.out.print("End");
 		return true;
 	}
 	
