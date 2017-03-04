@@ -271,8 +271,7 @@ public class Jeu {
 	}
 
 	public boolean playerWin(Player currentPlayer) {
-		if(currentPlayer.getwordlist().size()>=10){
-			this.end=true;
+		if(currentPlayer.getwordlist().size()>1){
 			return true;
 		}else{
 			return false;

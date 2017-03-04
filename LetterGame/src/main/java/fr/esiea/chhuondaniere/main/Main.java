@@ -19,18 +19,18 @@ public class Main {
 		while(true){
 			
 			while(jeu.playOrPass(joueur1, joueur2)){
-				if(jeu.isEnd())break;
+				if(jeu.playerWin(joueur1)||jeu.playerWin(joueur2))break;
 			}
-			if(jeu.isEnd())break;
+			if(jeu.playerWin(joueur1)||jeu.playerWin(joueur2))break;
 			while(jeu.playOrPass(joueur2, joueur1)){
-				if(jeu.isEnd())break;
+				if(jeu.playerWin(joueur1)||jeu.playerWin(joueur2))break;
 			}
-			if(jeu.isEnd())break;
+			if(jeu.playerWin(joueur1)||jeu.playerWin(joueur2))break;
 		}
 		if(jeu.playerWin(joueur1)){
-			System.out.println("Bravo "+joueur1+", tu remportes ce jeu !");
+			System.out.println("Bravo "+joueur1.getName()+", tu remportes ce jeu !");
 		}else if(jeu.playerWin(joueur2)){
-			System.out.println("Bravo "+joueur2+", tu remportes ce jeu !");
+			System.out.println("Bravo "+joueur2.getName()+", tu remportes ce jeu !");
 		}else{
 			System.out.println("Vous avez quitté, revenez nous voir vite !");
 		}
